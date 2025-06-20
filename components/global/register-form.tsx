@@ -8,12 +8,12 @@ import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 
-export function LoginForm({
+export function RegisterForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [showPassword2, setShowPassword2] = useState(false);
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0">
@@ -21,16 +21,24 @@ export function LoginForm({
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Welcome back</h1>
+                <h1 className="text-2xl font-bold">Create Account</h1>
                 <p className="text-muted-foreground text-balance">
-                  Login to your TopAiglons account
+                  Create a TopAiglon account
                 </p>
               </div>
               <div className="grid gap-3">
                 <Input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="John Doe"
+                />
+              </div>
+              <div className="grid gap-3">
+                <Input
                   id="email"
-                  type="email"
                   name="email"
+                  type="email"
                   placeholder="example@example.com"
                 />
               </div>
@@ -39,7 +47,7 @@ export function LoginForm({
                   id="password"
                   type={showPassword ? "text" : "password"}
                   name="password"
-                  placeholder="password"
+                  placeholder="create password"
                   className="pr-10"
                 />
                 <button
@@ -51,17 +59,26 @@ export function LoginForm({
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              <Button type="submit" className="w-full cursor-pointer">
-                Login
-              </Button>
-              <div className="text-center">
-                <a
-                  href="/forgot-password"
-                  className="ml-auto text-sm underline-offset-2 hover:underline"
+              <div className="relative grid gap-3">
+                <Input
+                  id="password2"
+                  type={showPassword2 ? "text" : "password"}
+                  name="password2"
+                  placeholder="confirm password"
+                  className="pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword2((prev) => !prev)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary"
+                  tabIndex={-1}
                 >
-                  Forgot your password?
-                </a>
+                  {showPassword2 ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
+              <Button type="submit" className="w-full cursor-pointer">
+                Create
+              </Button>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                 <span className="bg-card text-muted-foreground relative z-10 px-2">
                   Or continue with
@@ -79,7 +96,7 @@ export function LoginForm({
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="sr-only">Login with Apple</span>
+                  <span className="sr-only">Continue with Apple</span>
                 </Button>
                 <Button
                   variant="outline"
@@ -92,7 +109,7 @@ export function LoginForm({
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="sr-only">Login with Google</span>
+                  <span className="sr-only">Continue with Google</span>
                 </Button>
                 <Button
                   variant="outline"
@@ -105,13 +122,13 @@ export function LoginForm({
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="sr-only">Login with GitHub</span>
+                  <span className="sr-only">Continue with GitHub</span>
                 </Button>
               </div>
               <div className="text-center text-sm">
                 Don&apos;t have an account?{" "}
-                <a href="/sign-up" className="underline underline-offset-4">
-                  Sign up
+                <a href="/sign-in" className="underline underline-offset-4">
+                  Sign in
                 </a>
               </div>
             </div>
@@ -130,7 +147,7 @@ export function LoginForm({
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
         By clicking continue, you agree to our{" "}
         <a href="/terms">Terms of Service</a> and{" "}
-        <a href="/policy">Privacy Policy</a>.
+        <a href="/privacy">Privacy Policy</a>.
       </div>
     </div>
   );
