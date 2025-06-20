@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import { BorderBeam } from "../magicui/border-beam";
 
 export function LoginForm({
   className,
@@ -16,7 +17,7 @@ export function LoginForm({
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card className="overflow-hidden p-0">
+      <Card className="overflow-hidden p-0 relative">
         <CardContent className="grid p-0 md:grid-cols-2">
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
@@ -126,6 +127,7 @@ export function LoginForm({
             />
           </div>
         </CardContent>
+        <BorderBeam duration={8} size={100} />
       </Card>
       <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
         By clicking continue, you agree to our{" "}
