@@ -33,6 +33,7 @@ export function RegisterForm({
                   type="text"
                   name="name"
                   placeholder="John Doe"
+                  className="rounded-none"
                 />
               </div>
               <div className="grid gap-3">
@@ -41,6 +42,7 @@ export function RegisterForm({
                   name="email"
                   type="email"
                   placeholder="example@example.com"
+                  className="rounded-none"
                 />
               </div>
               <div className="relative grid gap-3">
@@ -49,7 +51,7 @@ export function RegisterForm({
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="create password"
-                  className="pr-10"
+                  className="pr-10 rounded-none"
                 />
                 <button
                   type="button"
@@ -66,7 +68,7 @@ export function RegisterForm({
                   type={showPassword2 ? "text" : "password"}
                   name="password2"
                   placeholder="confirm password"
-                  className="pr-10"
+                  className="pr-10 rounded-none"
                 />
                 <button
                   type="button"
@@ -78,7 +80,7 @@ export function RegisterForm({
                 </button>
               </div>
               <Button type="submit" className="w-full cursor-pointer">
-                Create
+                Create Account
               </Button>
               <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
                 <span className="bg-card text-muted-foreground relative z-10 px-2">
@@ -146,10 +148,10 @@ export function RegisterForm({
         </CardContent>
         <BorderBeam duration={8} size={100} />
       </Card>
-      <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
+      <div className="max-w-[18rem] mx-auto text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
         By clicking continue, you agree to our{" "}
         <a href="/terms">Terms of Service</a> and{" "}
-        <a href="/privacy">Privacy Policy</a>.
+        <a href="/policy">Privacy Policy</a>.
       </div>
     </div>
   );

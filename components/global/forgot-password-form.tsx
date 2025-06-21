@@ -41,8 +41,8 @@ export function ForgotPasswordForm({
                   Send Email
                 </Button>
               </div>
-              <div className="text-center text-sm">
-                <a href="/sign-in" className="underline underline-offset-4">
+              <div className="text-center text-xs">
+                <a href="/sign-in" className="hover:underline underline-offset-4">
                   Back to login
                 </a>
               </div>

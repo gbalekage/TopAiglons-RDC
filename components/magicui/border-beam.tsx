@@ -48,11 +48,11 @@ interface BorderBeamProps {
 
 export const BorderBeam = ({
   className,
-  size = 50,
+  size = 100,
   delay = 0,
   duration = 6,
-  colorFrom = "#ffff",
-  colorTo = "#ffff",
+  colorFrom = "#0080ff",
+  colorTo = "#ff007e",
   transition,
   style,
   reverse = false,

@@ -33,6 +33,7 @@ export function LoginForm({
                   type="email"
                   name="email"
                   placeholder="example@example.com"
+                  className="rounded-none"
                 />
               </div>
               <div className="relative grid gap-3">
@@ -41,7 +42,7 @@ export function LoginForm({
                   type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="pr-10"
+                  className="pr-10 rounded-none"
                 />
                 <button
                   type="button"
@@ -52,7 +53,10 @@ export function LoginForm({
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              <Button type="submit" className="w-full cursor-pointer">
+              <Button
+                type="submit"
+                className="w-full cursor-pointer rounded-none"
+              >
                 Login
               </Button>
               <div className="text-center">
@@ -72,7 +76,7 @@ export function LoginForm({
                 <Button
                   variant="outline"
                   type="button"
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer rounded-none"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -85,7 +89,7 @@ export function LoginForm({
                 <Button
                   variant="outline"
                   type="button"
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer rounded-none"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -98,7 +102,7 @@ export function LoginForm({
                 <Button
                   variant="outline"
                   type="button"
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer rounded-none"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
@@ -129,7 +133,7 @@ export function LoginForm({
         </CardContent>
         <BorderBeam duration={8} size={100} />
       </Card>
-      <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
+      <div className="max-w-[18rem] mx-auto text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
         By clicking continue, you agree to our{" "}
         <a href="/terms">Terms of Service</a> and{" "}
         <a href="/policy">Privacy Policy</a>.
